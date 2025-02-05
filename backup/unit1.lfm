@@ -1,0 +1,292 @@
+object FormMain: TFormMain
+  Left = 546
+  Height = 520
+  Top = 340
+  Width = 888
+  Caption = 'GOVCL测试'
+  ClientHeight = 520
+  ClientWidth = 888
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 2
+    Height = 494
+    Top = 2
+    Width = 884
+    Align = alClient
+    BorderSpacing.Around = 2
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    ClientHeight = 490
+    ClientWidth = 880
+    TabOrder = 0
+    object PageControl1: TPageControl
+      Left = 0
+      Height = 490
+      Top = 0
+      Width = 880
+      ActivePage = TabSheet1
+      Align = alClient
+      ParentBiDiMode = False
+      ParentFont = False
+      TabIndex = 0
+      TabOrder = 0
+      object TabSheet1: TTabSheet
+        Caption = '界面显示'
+        ClientHeight = 460
+        ClientWidth = 872
+        Font.Pitch = fpVariable
+        OnContextPopup = TabSheet1ContextPopup
+        ParentBiDiMode = False
+        ParentFont = False
+        object Panel2: TPanel
+          Left = 0
+          Height = 36
+          Top = 424
+          Width = 872
+          Align = alBottom
+          BevelOuter = bvNone
+          ClientHeight = 36
+          ClientWidth = 872
+          TabOrder = 0
+          object Button_stop: TButton
+            Left = 88
+            Height = 25
+            Top = 5
+            Width = 75
+            Caption = '停止'
+            OnClick = Button_stopClick
+            TabOrder = 0
+          end
+          object Button_start: TButton
+            Left = 3
+            Height = 25
+            Top = 5
+            Width = 75
+            Caption = '开始'
+            OnClick = Button_startClick
+            TabOrder = 1
+          end
+          object Button_FangWenBaiDu: TButton
+            Left = 168
+            Height = 25
+            Top = 5
+            Width = 75
+            Caption = '访问百度'
+            OnClick = Button_FangWenBaiDuClick
+            TabOrder = 2
+          end
+          object Button_GMM: TButton
+            Left = 248
+            Height = 25
+            Top = 5
+            Width = 75
+            Caption = '刷新G买卖'
+            TabOrder = 3
+          end
+        end
+        object ListView1: TListView
+          Left = 3
+          Height = 418
+          Top = 3
+          Width = 866
+          Align = alClient
+          BorderSpacing.Left = 3
+          BorderSpacing.Top = 3
+          BorderSpacing.Right = 3
+          BorderSpacing.Bottom = 3
+          Checkboxes = True
+          Columns = <          
+            item
+              Caption = '序号'
+              MaxWidth = 66
+              Width = 66
+            end          
+            item
+              Caption = '账号'
+              MaxWidth = 100
+              MinWidth = 10
+              Width = 100
+            end          
+            item
+              Caption = '密码'
+              MaxWidth = 100
+              Width = 100
+            end          
+            item
+              Caption = 'IP'
+              MaxWidth = 50
+            end          
+            item
+              Caption = '状态'
+              MaxWidth = 500
+              Width = 300
+            end>
+          GridLines = True
+          PopupMenu = PopupMenu_list
+          RowSelect = True
+          TabOrder = 1
+          ViewStyle = vsReport
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = '功能设置'
+        ClientHeight = 460
+        ClientWidth = 872
+        object Label1: TLabel
+          Left = 9
+          Height = 17
+          Top = 55
+          Width = 65
+          AutoSize = False
+          Caption = '名称/别名：'
+          ParentColor = False
+        end
+        object Label2: TLabel
+          Left = 9
+          Height = 17
+          Top = 21
+          Width = 57
+          AutoSize = False
+          Caption = '线程数量：'
+          ParentColor = False
+        end
+        object EdtThreads: TEdit
+          Left = 81
+          Height = 25
+          Top = 17
+          Width = 145
+          AutoSize = False
+          TabOrder = 0
+          Text = '5'
+        end
+        object EdtName: TEdit
+          Left = 81
+          Height = 25
+          Top = 51
+          Width = 353
+          AutoSize = False
+          AutoSelect = False
+          TabOrder = 1
+        end
+        object Image1: TImage
+          Left = 9
+          Height = 207
+          Top = 88
+          Width = 300
+          Center = True
+          Stretch = True
+        end
+        object ScrollBox1: TScrollBox
+          Left = 368
+          Height = 199
+          Top = 96
+          Width = 224
+          HorzScrollBar.Page = 1
+          VertScrollBar.Page = 1
+          TabOrder = 2
+          OnClick = ScrollBox1Click
+        end
+        object ProgressBar1: TProgressBar
+          Left = 184
+          Height = 20
+          Top = 360
+          Width = 100
+          TabOrder = 3
+        end
+        object Edit1: TEdit
+          Left = 680
+          Height = 25
+          Top = 151
+          Width = 72
+          TabOrder = 4
+          Text = 'Edit1'
+        end
+      end
+      object TabSheet3: TTabSheet
+        Caption = '日志输出'
+        ClientHeight = 460
+        ClientWidth = 872
+        object Memo_log: TMemo
+          Left = 3
+          Height = 454
+          Top = 3
+          Width = 866
+          Align = alClient
+          BorderSpacing.Around = 3
+          Lines.Strings = (
+            'Memo_log'
+          )
+          TabOrder = 0
+          WordWrap = False
+        end
+      end
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 2
+    Height = 22
+    Top = 498
+    Width = 884
+    BorderSpacing.Left = 2
+    BorderSpacing.Right = 2
+    Panels = <    
+      item
+        Text = '状态'
+        Width = 50
+      end    
+      item
+        Width = 300
+      end    
+      item
+        Width = 300
+      end>
+    SimplePanel = False
+  end
+  object ActionList1: TActionList
+    Left = 832
+    Top = 440
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
+    end
+    object Action2: TAction
+      Caption = 'Action2'
+    end
+    object Action3: TAction
+      Caption = 'Action3'
+    end
+  end
+  object PopupMenu_list: TPopupMenu
+    Left = 768
+    Top = 440
+    object MenuItem1: TMenuItem
+      Caption = '复制'
+      OnClick = MenuItem1Click
+      object MenuItem_FuZhiZhangHao: TMenuItem
+        Caption = '复制账号'
+        OnClick = MenuItem_FuZhiZhangHaoClick
+      end
+      object MenuItem_FuZhiMiMa: TMenuItem
+        Caption = '复制密码'
+        OnClick = MenuItem_FuZhiMiMaClick
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 704
+    Top = 440
+  end
+  object TrayIcon1: TTrayIcon
+    PopUpMenu = PopupMenu_tuPan
+    Visible = True
+    Left = 640
+    Top = 440
+  end
+  object PopupMenu_tuPan: TPopupMenu
+    Left = 584
+    Top = 440
+    object MenuItem_tuiChu: TMenuItem
+      Caption = '退出'
+    end
+  end
+end
